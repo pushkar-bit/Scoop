@@ -1,0 +1,45 @@
+.exercise-timer {
+  background-color: var(--color-white);
+  padding: var(--space-2);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.timer-display {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  text-align: center;
+  margin-bottom: var(--space-2);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+.timer-controls {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.timer-button {
+  flex: 1;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-md);
+  transition: background-color var(--transition-fast);
+  text-align: center;
+}
+
+.timer-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.timer-button.reset {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-800);
+}
+
+.timer-button.reset:hover {
+  background-color: var(--color-gray-300);
+}
