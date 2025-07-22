@@ -6,6 +6,7 @@ import ExerciseDetail from './components/ExerciseDetail'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Login from './components/Login';
 import { muscleGroups } from './data/muscleGroups'
 import { exercises } from './data/exercises'
 import './styles/App.css'
@@ -41,6 +42,9 @@ function App() {
   }
   // Render content based on current page
   const renderContent = () => {
+    if (currentPage === 'login') {
+      return <Login />;
+    }
     if (currentPage === 'about') {
       return <About />
     }

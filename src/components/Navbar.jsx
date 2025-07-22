@@ -53,7 +53,7 @@ const Navbar = ({ searchQuery, setSearchQuery, currentPage, setCurrentPage }) =>
           >
             Contact
           </a>
-          <button className="login-button">Login</button>
+          <button className="login-button" onClick={() => handleNavClick('login')}>Login</button>
         </div>
         <button className="menu-toggle" onClick={toggleMenu}>
           <span className={`menu-icon ${isMenuOpen ? 'open' : ''}`}></span>
@@ -82,7 +82,7 @@ const Navbar = ({ searchQuery, setSearchQuery, currentPage, setCurrentPage }) =>
           >
             Contact
           </a>
-          <button className="mobile-login-button">Login</button>
+          <button className="mobile-login-button" onClick={() => handleNavClick('login')}>Login</button>
         </div>
       )}
     </nav>
