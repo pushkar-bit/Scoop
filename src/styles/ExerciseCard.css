@@ -132,3 +132,17 @@
   margin: 0;
   flex: 1;
 }
+
+@media (max-width: 600px) {
+  .exercise-card {
+    min-width: 0;
+    width: 100%;
+    margin-bottom: var(--space-3);
+  }
+  .card-content {
+    padding: var(--space-2);
+  }
+  .card-title {
+    font-size: var(--font-size-md);
+  }
+}

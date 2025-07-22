@@ -45,7 +45,6 @@
   color: var(--color-white);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .filter-buttons {
     flex-direction: row;
@@ -61,7 +60,21 @@
   }
 }
 
-/* Primary Button */
+@media (max-width: 600px) {
+  .muscle-group-filter {
+    padding: var(--space-3) var(--space-1);
+  }
+  .filter-buttons {
+    flex-direction: column;
+    gap: var(--space-1);
+    align-items: stretch;
+  }
+  .filter-buttons button {
+    width: 100%;
+    font-size: var(--font-size-md);
+  }
+}
+
 .primary-button {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -75,7 +88,6 @@
   background-color: var(--color-primary-dark);
 }
 
-/* Secondary Button */
 .secondary-button {
   background-color: transparent;
   color: var(--color-primary);
@@ -92,7 +104,6 @@
   border-color: var(--color-primary-light);
 }
 
-/* No Results Message */
 .no-results {
   display: flex;
   flex-direction: column;

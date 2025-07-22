@@ -61,57 +61,12 @@ const ExerciseDetail = ({ exercise, onClose, isFavorite, onToggleFavorite }) => 
       <div className="detail-content">
         <div className="detail-main">
           <h1 className="detail-title">{exercise.name}</h1>
-          
           <div className="detail-info">
-            <span className="detail-muscle-group">Muscle Group: {exercise.muscleGroup}</span>
-            <span className="detail-difficulty">Difficulty: {exercise.difficulty}</span>
-            <span className="detail-equipment">Equipment: {exercise.equipment}</span>
+            <span className="detail-muscle-group">Muscle Group: {exercise.category}</span>
+            <span className="detail-equipment">Equipment: {exercise.equipment && exercise.equipment.length > 0 ? exercise.equipment.join(', ') : 'None'}</span>
+            <span className="detail-muscles">Muscles: {exercise.muscles && exercise.muscles.length > 0 ? exercise.muscles.join(', ') : 'None'}</span>
           </div>
-          
-          <p className="detail-description">{exercise.description}</p>
-          
-          <div className="tutorial-section">
-            <h2>Step-by-Step Tutorial</h2>
-            <div className="tutorial-navigation">
-              <div className="step-counter">
-                Step {currentStep + 1} of {exercise.steps.length}
-              </div>
-              <div className="navigation-buttons">
-                <button 
-                  className="nav-button" 
-                  onClick={goToPreviousStep}
-                  disabled={currentStep === 0}
-                >
-                  Previous
-                </button>
-                <button 
-                  className="nav-button" 
-                  onClick={goToNextStep}
-                  disabled={currentStep === exercise.steps.length - 1}
-                >
-                  Next
-                </button>
-              </div>
-            </div>
-            
-            <div className="tutorial-step">
-              <div className="step-image">
-                <img 
-                  src={exercise.steps[currentStep].imageUrl || exercise.imageUrl} 
-                  alt={`Step ${currentStep + 1}`} 
-                />
-              </div>
-              <div className="step-instructions">
-                <h3>Step {currentStep + 1}: {exercise.steps[currentStep].title}</h3>
-                <p>{exercise.steps[currentStep].instruction}</p>
-                {exercise.steps[currentStep].tip && (
-                  <div className="step-tip">
-                    <strong>Tip:</strong> {exercise.steps[currentStep].tip}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          <p className="detail-description" dangerouslySetInnerHTML={{ __html: exercise.description }} />
         </div>
         
         <div className="detail-sidebar">
@@ -121,7 +76,6 @@ const ExerciseDetail = ({ exercise, onClose, isFavorite, onToggleFavorite }) => 
           
           <div className="workout-tools">
             <h3>Workout Tools</h3>
-            
             <div className="tool-section">
               <h4>Timer</h4>
               <ExerciseTimer 
@@ -129,7 +83,6 @@ const ExerciseDetail = ({ exercise, onClose, isFavorite, onToggleFavorite }) => 
                 onToggle={() => setTimerActive(!timerActive)} 
               />
             </div>
-            
             <div className="tool-section">
               <h4>Rep Counter</h4>
               <div className="rep-counter">
@@ -137,11 +90,6 @@ const ExerciseDetail = ({ exercise, onClose, isFavorite, onToggleFavorite }) => 
                 <span className="rep-count">{repCount}</span>
                 <button className="counter-button" onClick={incrementReps}>+</button>
               </div>
-            </div>
-            
-            <div className="recommended-section">
-              <h4>Recommended Sets & Reps</h4>
-              <p>{exercise.recommendations}</p>
             </div>
           </div>
         </div>

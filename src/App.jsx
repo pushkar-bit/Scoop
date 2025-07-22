@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ExerciseList from './components/ExerciseList'
@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Login from './components/Login';
 import { muscleGroups } from './data/muscleGroups'
-import { exercises } from './data/exercises'
+import { fetchExercises } from './data/exercises'
 import './styles/App.css'
 function App() {
   const [selectedMuscleGroup, setSelectedMuscleGroup] = useState('all')
@@ -16,14 +16,34 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [favorites, setFavorites] = useState([])
   const [currentPage, setCurrentPage] = useState('home')
-  // Filter exercises based on selected muscle group and search query
+  const [exercises, setExercises] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    async function loadExercises() {
+      setLoading(true);
+      setError('');
+      try {
+        const data = await fetchExercises();
+        setExercises(data);
+      } catch (err) {
+        setError('Failed to load exercises');
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadExercises();
+  }, []);
+
   const filteredExercises = exercises.filter(exercise => {
-    const matchesMuscleGroup = selectedMuscleGroup === 'all' ||
-                              exercise.muscleGroup === selectedMuscleGroup
-    const matchesSearch = exercise.name.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesMuscleGroup && matchesSearch
-  })
-  // Toggle favorite status for an exercise
+    const matchesMuscleGroup =
+      selectedMuscleGroup === 'all' ||
+      (exercise.category && exercise.category.toLowerCase().includes(selectedMuscleGroup)) ||
+      (exercise.muscles && exercise.muscles.some(muscle => muscle.toLowerCase().includes(selectedMuscleGroup)));
+    const matchesSearch = exercise.name && exercise.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesMuscleGroup && matchesSearch;
+  });
   const toggleFavorite = (exerciseId) => {
     if (favorites.includes(exerciseId)) {
       setFavorites(favorites.filter(id => id !== exerciseId))
@@ -31,17 +51,16 @@ function App() {
       setFavorites([...favorites, exerciseId])
     }
   }
-  // Handle exercise click to show details
   const handleExerciseClick = (exercise) => {
     setSelectedExercise(exercise)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-  // Close exercise details view
   const handleCloseDetail = () => {
     setSelectedExercise(null)
   }
-  // Render content based on current page
   const renderContent = () => {
+    if (loading) return <div>Loading exercises...</div>;
+    if (error) return <div>{error}</div>;
     if (currentPage === 'login') {
       return <Login />;
     }

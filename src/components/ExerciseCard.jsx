@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import '../styles/ExerciseCard.css'
-
 const ExerciseCard = ({ exercise, onClick, isFavorite, onToggleFavorite }) => {
   const [isHovered, setIsHovered] = useState(false)
-  
   const handleFavoriteClick = (e) => {
-    e.stopPropagation() /
+    e.stopPropagation()
     onToggleFavorite()
   }
-
   return (
     <div 
       className="exercise-card"
@@ -22,7 +19,6 @@ const ExerciseCard = ({ exercise, onClick, isFavorite, onToggleFavorite }) => {
           <button className="view-button">View Details</button>
         </div>
       </div>
-      
       <div className="card-content">
         <div className="card-header">
           <h3 className="card-title">{exercise.name}</h3>
@@ -39,16 +35,13 @@ const ExerciseCard = ({ exercise, onClick, isFavorite, onToggleFavorite }) => {
             </svg>
           </button>
         </div>
-        
         <div className="card-details">
-          <span className="muscle-group">{exercise.muscleGroup}</span>
-          <span className="difficulty">{exercise.difficulty}</span>
+          <span className="muscle-group">{exercise.category}</span>
+          <span className="difficulty">{exercise.muscles && exercise.muscles[0]}</span>
         </div>
-        
-        <p className="card-description">{exercise.shortDescription}</p>
+        <p className="card-description">{exercise.description && exercise.description.replace(/<[^>]+>/g, '').slice(0, 80)}...</p>
       </div>
     </div>
   )
 }
-
 export default ExerciseCard

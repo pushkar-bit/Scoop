@@ -16,7 +16,7 @@ const Hero = () => {
       </div>
       <div className="hero-image">
         <img 
-          src="https://i.pinimg.com/736x/e2/3a/c1/e23ac1de79696cfb9489e92681fe4afc.jpg" 
+          src="dist/assets/IMG_4032.jpeg" 
           alt="Person working out" 
         />
       </div>
