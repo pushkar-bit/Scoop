@@ -4,8 +4,12 @@ import App from './App'
 import './index.css'
 import './firebase';
 
-createRoot(document.getElementById('root')).render(
+import { BrowserRouter } from 'react-router-dom'
+
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )

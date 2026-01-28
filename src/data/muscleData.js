@@ -422,8 +422,8 @@ export const muscleData = {
       advanced: 'Heavy weighted raises and plyometric work'
     }
   },
-  traps: {
-    id: 'traps',
+  back_traps: {
+    id: 'back_traps',
     name: 'Traps',
     scientificName: 'Trapezius',
     description: 'The trapezius is a large triangular muscle extending over the back of the neck and shoulders. It moves the scapulae and supports the arm.',
@@ -433,8 +433,8 @@ export const muscleData = {
       { name: 'Upright Rows', sets: '3 sets', reps: '10-12 reps', equipment: 'Barbell', description: 'Pull weight vertically to chest level' }
     ]
   },
-  upperback: {
-    id: 'upperback',
+  back_upperback: {
+    id: 'back_upperback',
     name: 'Upper Back',
     scientificName: 'Rhomboids & Teres Major',
     description: 'The upper back muscles, including rhomboids and teres major, are crucial for shoulder health and posture, responsible for pulling the shoulder blades together.',
@@ -444,8 +444,8 @@ export const muscleData = {
       { name: 'Chest Supported Rows', sets: '3 sets', reps: '12-15 reps', equipment: 'Dumbbells', description: 'Row weights while lying prone on an incline bench' }
     ]
   },
-  reardelts: {
-    id: 'reardelts',
+  back_reardelts: {
+    id: 'back_reardelts',
     name: 'Rear Delts',
     scientificName: 'Posterior Deltoid',
     description: 'The rear delt is located on the back of the shoulder. It is responsible for horizontal abduction and external rotation of the arm.',
@@ -455,8 +455,8 @@ export const muscleData = {
       { name: 'Rear Delt Rows', sets: '3 sets', reps: '12-15 reps', equipment: 'Dumbbells', description: 'Row with elbows flared out to 90 degrees' }
     ]
   },
-  lats: {
-    id: 'lats',
+  back_lats: {
+    id: 'back_lats',
     name: 'Lats',
     scientificName: 'Latissimus Dorsi',
     description: 'The lats are the largest muscles in the upper body, giving the back its V-taper. They are responsible for pulling the arms down and back.',
@@ -466,8 +466,8 @@ export const muscleData = {
       { name: 'Straight Arm Pulldowns', sets: '3 sets', reps: '15-20 reps', equipment: 'Cable Machine', description: 'Pull bar down with straight arms' }
     ]
   },
-  lowerback: {
-    id: 'lowerback',
+  back_lowerback: {
+    id: 'back_lowerback',
     name: 'Lower Back',
     scientificName: 'Erector Spinae',
     description: 'The lower back muscles stabilize the spine and allow for extension. They are key to core strength and preventing injury.',
@@ -477,8 +477,8 @@ export const muscleData = {
       { name: 'Deadlifts', sets: '3 sets', reps: '5-8 reps', equipment: 'Barbell', description: 'Fundamental compound lift for back chain' }
     ]
   },
-  glutes: {
-    id: 'glutes',
+  back_glutes: {
+    id: 'back_glutes',
     name: 'Glutes',
     scientificName: 'Gluteus Maximus',
     description: 'The glutes are the largest and strongest muscles in the human body, responsible for hip extension and stabilization.',
@@ -486,6 +486,61 @@ export const muscleData = {
       { name: 'Hip Thrusts', sets: '4 sets', reps: '10-12 reps', equipment: 'Barbell', description: 'Drive hips upward with weight across lap' },
       { name: 'Romanian Deadlifts', sets: '4 sets', reps: '8-12 reps', equipment: 'Barbell', description: 'Hinge at hips to target posterior chain' },
       { name: 'Bulgarian Split Squats', sets: '3 sets', reps: '10-12 reps', equipment: 'Dumbbells', description: 'Single leg squat with rear foot elevated' }
+    ]
+  },
+  back_hamstrings: {
+    id: 'back_hamstrings',
+    name: 'Hamstrings',
+    scientificName: 'Biceps Femoris',
+    description: 'The hamstrings consist of three muscles on the back of the thigh. They are essential for knee flexion and hip extension.',
+    exercises: [
+      { name: 'Seated Leg Curls', sets: '4 sets', reps: '12-15 reps', equipment: 'Machine', description: 'Curl legs toward seat to isolate hamstrings' },
+      { name: 'Lying Leg Curls', sets: '3 sets', reps: '10-12 reps', equipment: 'Machine', description: 'Curl legs toward glutes while lying prone' },
+      { name: 'Stiff-Leg Deadlifts', sets: '4 sets', reps: '8-10 reps', equipment: 'Barbell', description: 'Hinge at hips with minimal knee bend' }
+    ]
+  },
+  back_calves: {
+    id: 'back_calves',
+    name: 'Calves',
+    scientificName: 'Gastrocnemius & Soleus',
+    description: 'The calves are composed of the gastrocnemius and soleus muscles. They are responsible for plantar flexion and are vital for explosive movement.',
+    exercises: [
+      { name: 'Standing Calf Raises', sets: '5 sets', reps: '15-20 reps', equipment: 'Machine', description: 'Raise heels while standing to target gastrocnemius' },
+      { name: 'Seated Calf Raises', sets: '4 sets', reps: '15-20 reps', equipment: 'Machine', description: 'Raise heels while seated to isolate the soleus' },
+      { name: 'Donkey Calf Raises', sets: '3 sets', reps: '15-20 reps', equipment: 'Machine', description: 'Heel raises with torso hinged forward' }
+    ]
+  },
+  back_triceps: {
+    id: 'back_triceps',
+    name: 'Triceps',
+    scientificName: 'Triceps Brachii',
+    description: 'The triceps are a three-headed muscle on the back of the upper arm. They are primarily responsible for extension of the elbow joint.',
+    exercises: [
+      { name: 'Skull Crushers', sets: '4 sets', reps: '10-12 reps', equipment: 'EZ Bar', description: 'Lower weight to forehead while lying on bench' },
+      { name: 'Tricep Pushdowns', sets: '4 sets', reps: '12-15 reps', equipment: 'Cable', description: 'Push bar down toward thighs using triceps' },
+      { name: 'Overhead Extensions', sets: '3 sets', reps: '12-15 reps', equipment: 'Dumbbell', description: 'Extend weight overhead to stretch triceps' }
+    ]
+  },
+  back_forearms: {
+    id: 'back_forearms',
+    name: 'Forearms',
+    scientificName: 'Brachioradialis',
+    description: 'The back of the forearms contains the extensor muscles, which are responsible for extending the wrist and fingers.',
+    exercises: [
+      { name: 'Reverse Curls', sets: '3 sets', reps: '12-15 reps', equipment: 'Barbell', description: 'Curl with overhand grip to target brachioradialis' },
+      { name: 'Wrist Extensions', sets: '3 sets', reps: '15-20 reps', equipment: 'Dumbbells', description: 'Curl wrists upward with palms facing down' },
+      { name: 'Farmer\'s Walk', sets: '3 sets', reps: '40m', equipment: 'Dumbbells', description: 'Carry heavy weights to build grip strength' }
+    ]
+  },
+  back_core: {
+    id: 'back_core',
+    name: 'Core',
+    scientificName: 'Erector Spinae & Obliques',
+    description: 'The posterior core, primarily the erector spinae, supports the spine and maintains posture during heavy movements.',
+    exercises: [
+      { name: 'Back Hyperextensions', sets: '3 sets', reps: '15-20 reps', equipment: 'Bench', description: 'Raise torso from hinged position to strengthen lower back' },
+      { name: 'Bird-Dog', sets: '3 sets', reps: '12 reps', equipment: 'Bodyweight', description: 'Extend opposite arm and leg while on all fours' },
+      { name: 'Superman', sets: '3 sets', reps: '15 reps', equipment: 'Bodyweight', description: 'Lift chest and legs off floor simultaneously' }
     ]
   }
 };

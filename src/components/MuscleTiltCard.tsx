@@ -21,7 +21,8 @@ export default function MuscleTiltCard({
     const basicData = MUSCLES[muscleId as keyof typeof MUSCLES];
 
     const muscleIdMap: Record<string, string> = {
-        neckandtraps: "neck",
+        // Front View Mappings
+        neckandtraps: "traps",
         shoulders: "shoulders",
         biceps: "biceps",
         triceps: "triceps",
@@ -30,19 +31,19 @@ export default function MuscleTiltCard({
         core: "abs",
         upperlegs: "quads",
         lowerlegs: "calves",
-        traps: "traps",
-        upperback: "upperback",
-        reardelts: "reardelts",
-        lats: "lats",
-        lowerback: "lowerback",
-        glutes: "glutes",
-        hamstrings: "hamstrings",
+        // Back View Mappings are direct via back_ prefix
     };
 
-    const richData = (muscleData as any)[muscleIdMap[muscleId]];
+    const richId = muscleIdMap[muscleId] || muscleId;
+    const richData = (muscleData as any)[richId];
+
+    // For label, prefer the specific label in MUSCLES (back-specific now)
     const label = basicData?.label || richData?.name || muscleId;
     const description = richData?.description || "High-intensity training for maximum growth and definition.";
-    const imageSrc = `/muscles/${muscleId}.png`;
+
+    // For images, attempt to use the base name if it's a back muscle
+    const baseId = muscleId.replace('back_', '');
+    const imageSrc = `/muscles/${baseId}.png`;
 
     const isLeftSide = anchor.x < window.innerWidth / 2;
     const isBottomHalf = anchor.y > window.innerHeight * 0.7;
