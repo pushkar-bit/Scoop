@@ -8,4 +8,11 @@ export const MUSCLES = {
     core: { label: "Core" },
     upperlegs: { label: "Upper Legs" },
     lowerlegs: { label: "Lower Legs" },
+    traps: { label: "Traps" },
+    upperback: { label: "Upper Back" },
+    reardelts: { label: "Rear Delts" },
+    lats: { label: "Lats" },
+    lowerback: { label: "Lower Back" },
+    glutes: { label: "Glutes" },
+    hamstrings: { label: "Hamstrings" },
 };

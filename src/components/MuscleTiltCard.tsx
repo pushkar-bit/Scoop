@@ -30,6 +30,13 @@ export default function MuscleTiltCard({
         core: "abs",
         upperlegs: "quads",
         lowerlegs: "calves",
+        traps: "traps",
+        upperback: "upperback",
+        reardelts: "reardelts",
+        lats: "lats",
+        lowerback: "lowerback",
+        glutes: "glutes",
+        hamstrings: "hamstrings",
     };
 
     const richData = (muscleData as any)[muscleIdMap[muscleId]];

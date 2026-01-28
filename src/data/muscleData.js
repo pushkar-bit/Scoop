@@ -51,7 +51,7 @@ export const muscleData = {
       advanced: 'Incorporate advanced techniques like drop sets and supersets'
     }
   },
-  
+
   shoulders: {
     id: 'shoulders',
     name: 'Shoulders',
@@ -104,7 +104,7 @@ export const muscleData = {
       advanced: 'Incorporate heavy compound lifts and isolation work'
     }
   },
-  
+
   biceps: {
     id: 'biceps',
     name: 'Biceps',
@@ -157,7 +157,7 @@ export const muscleData = {
       advanced: 'Implement advanced techniques like 21s and drop sets'
     }
   },
-  
+
   abs: {
     id: 'abs',
     name: 'Abs',
@@ -210,7 +210,7 @@ export const muscleData = {
       advanced: 'Focus on hanging movements and advanced core work'
     }
   },
-  
+
   quads: {
     id: 'quads',
     name: 'Quadriceps',
@@ -263,7 +263,7 @@ export const muscleData = {
       advanced: 'Heavy compound lifts with advanced techniques'
     }
   },
-  
+
   hamstrings: {
     id: 'hamstrings',
     name: 'Hamstrings',
@@ -316,7 +316,7 @@ export const muscleData = {
       advanced: 'Add Nordic curls and heavy deadlift variations'
     }
   },
-  
+
   back: {
     id: 'back',
     name: 'Back',
@@ -369,7 +369,7 @@ export const muscleData = {
       advanced: 'Heavy deadlifts and weighted pull-ups'
     }
   },
-  
+
   calves: {
     id: 'calves',
     name: 'Calves',
@@ -421,6 +421,72 @@ export const muscleData = {
       intermediate: 'Add weight and vary foot positions',
       advanced: 'Heavy weighted raises and plyometric work'
     }
+  },
+  traps: {
+    id: 'traps',
+    name: 'Traps',
+    scientificName: 'Trapezius',
+    description: 'The trapezius is a large triangular muscle extending over the back of the neck and shoulders. It moves the scapulae and supports the arm.',
+    exercises: [
+      { name: 'Dumbbell Shrugs', sets: '4 sets', reps: '12-15 reps', equipment: 'Dumbbells', description: 'Lift shoulders toward ears, hold, then lower' },
+      { name: 'Face Pulls', sets: '3 sets', reps: '15-20 reps', equipment: 'Cable Machine', description: 'Pull rope toward forehead, separating ends' },
+      { name: 'Upright Rows', sets: '3 sets', reps: '10-12 reps', equipment: 'Barbell', description: 'Pull weight vertically to chest level' }
+    ]
+  },
+  upperback: {
+    id: 'upperback',
+    name: 'Upper Back',
+    scientificName: 'Rhomboids & Teres Major',
+    description: 'The upper back muscles, including rhomboids and teres major, are crucial for shoulder health and posture, responsible for pulling the shoulder blades together.',
+    exercises: [
+      { name: 'Seated Cable Rows', sets: '4 sets', reps: '10-12 reps', equipment: 'Cable Machine', description: 'Pull handle toward abdomen while sitting' },
+      { name: 'Bent Over Rows', sets: '4 sets', reps: '8-12 reps', equipment: 'Barbell', description: 'Pull bar toward lower chest while bent over' },
+      { name: 'Chest Supported Rows', sets: '3 sets', reps: '12-15 reps', equipment: 'Dumbbells', description: 'Row weights while lying prone on an incline bench' }
+    ]
+  },
+  reardelts: {
+    id: 'reardelts',
+    name: 'Rear Delts',
+    scientificName: 'Posterior Deltoid',
+    description: 'The rear delt is located on the back of the shoulder. It is responsible for horizontal abduction and external rotation of the arm.',
+    exercises: [
+      { name: 'Reverse Flyes', sets: '3 sets', reps: '15-20 reps', equipment: 'Dumbbells', description: 'Raise arms to sides while bent over' },
+      { name: 'Face Pulls', sets: '3 sets', reps: '15-20 reps', equipment: 'Cable Machine', description: 'Pull toward face with external rotation' },
+      { name: 'Rear Delt Rows', sets: '3 sets', reps: '12-15 reps', equipment: 'Dumbbells', description: 'Row with elbows flared out to 90 degrees' }
+    ]
+  },
+  lats: {
+    id: 'lats',
+    name: 'Lats',
+    scientificName: 'Latissimus Dorsi',
+    description: 'The lats are the largest muscles in the upper body, giving the back its V-taper. They are responsible for pulling the arms down and back.',
+    exercises: [
+      { name: 'Pull-ups', sets: '4 sets', reps: 'Fail', equipment: 'Bodyweight', description: 'Classic vertical pulling movement' },
+      { name: 'Lat Pulldowns', sets: '4 sets', reps: '10-12 reps', equipment: 'Cable Machine', description: 'Pull bar to upper chest from above' },
+      { name: 'Straight Arm Pulldowns', sets: '3 sets', reps: '15-20 reps', equipment: 'Cable Machine', description: 'Pull bar down with straight arms' }
+    ]
+  },
+  lowerback: {
+    id: 'lowerback',
+    name: 'Lower Back',
+    scientificName: 'Erector Spinae',
+    description: 'The lower back muscles stabilize the spine and allow for extension. They are key to core strength and preventing injury.',
+    exercises: [
+      { name: 'Hyperextensions', sets: '3 sets', reps: '15-20 reps', equipment: 'Bench', description: 'Extend torso upward from hinged position' },
+      { name: 'Good Mornings', sets: '3 sets', reps: '10-12 reps', equipment: 'Barbell', description: 'Hinge forward with bar on shoulders' },
+      { name: 'Deadlifts', sets: '3 sets', reps: '5-8 reps', equipment: 'Barbell', description: 'Fundamental compound lift for back chain' }
+    ]
+  },
+  glutes: {
+    id: 'glutes',
+    name: 'Glutes',
+    scientificName: 'Gluteus Maximus',
+    description: 'The glutes are the largest and strongest muscles in the human body, responsible for hip extension and stabilization.',
+    exercises: [
+      { name: 'Hip Thrusts', sets: '4 sets', reps: '10-12 reps', equipment: 'Barbell', description: 'Drive hips upward with weight across lap' },
+      { name: 'Romanian Deadlifts', sets: '4 sets', reps: '8-12 reps', equipment: 'Barbell', description: 'Hinge at hips to target posterior chain' },
+      { name: 'Bulgarian Split Squats', sets: '3 sets', reps: '10-12 reps', equipment: 'Dumbbells', description: 'Single leg squat with rear foot elevated' }
+    ]
   }
 };
 
