@@ -1,0 +1,307 @@
+.exercise-detail {
+  padding: var(--space-4) var(--space-3);
+  background-color: black;
+  animation: fadeIn 300ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+.back-button svg {
+  margin-right: var(--space-1);
+}
+
+.back-button:hover {
+  color: var(--color-primary);
+}
+
+.detail-favorite-button {
+  display: flex;
+  align-items: center;
+  color: var(--color-gray-800);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-gray-100);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-fast);
+}
+
+.detail-favorite-button svg {
+  margin-right: var(--space-1);
+}
+
+.detail-favorite-button:hover {
+  background-color: var(--color-gray-200);
+}
+
+.detail-favorite-button.active {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+
+.detail-content {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.detail-main {
+  flex: 2;
+}
+
+.detail-sidebar {
+  flex: 1;
+}
+
+.detail-title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-3);
+  color: white;
+}
+
+.detail-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.detail-muscle-group,
+.detail-difficulty,
+.detail-equipment {
+  font-size: var(--font-size-sm);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-full);
+  font-weight: var(--font-weight-medium);
+}
+
+.detail-description {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  color: white;
+  margin-bottom: var(--space-4);
+}
+
+.tutorial-section {
+  margin-top: var(--space-4);
+}
+
+.tutorial-section h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-3);
+  color: white;
+}
+
+.tutorial-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.step-counter {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: white;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.nav-button {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+}
+
+.nav-button:hover:not(:disabled) {
+  background-color: var(--color-gray-200);
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tutorial-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background-color: var(--color-gray-50);
+  padding: var(--space-3);
+  border-radius: var(--border-radius-lg);
+}
+
+.step-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+}
+
+.step-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.step-instructions {
+  padding: var(--space-3);
+}
+
+.step-instructions h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-2);
+  color: var(--color-black);
+}
+
+.step-instructions p {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-2);
+}
+
+.step-tip {
+  background-color: var(--color-warning-light);
+  padding: var(--space-2);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-2);
+}
+
+/* Sidebar */
+.detail-image {
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.detail-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.workout-tools {
+  background-color: var(--color-gray-50);
+  padding: var(--space-3);
+  border-radius: var(--border-radius-lg);
+}
+
+.workout-tools h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+  color: var(--color-black);
+}
+
+.tool-section {
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.tool-section h4 {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-2);
+  color: var(--color-gray-800);
+}
+
+.rep-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  padding: var(--space-2);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.counter-button {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  transition: all var(--transition-fast);
+}
+
+.counter-button:hover {
+  background-color: var(--color-gray-200);
+}
+
+.rep-count {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+}
+
+.recommended-section {
+  margin-top: var(--space-3);
+}
+
+.recommended-section h4 {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-2);
+  color: var(--color-gray-800);
+}
+
+.recommended-section p {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-gray-700);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .detail-content {
+    flex-direction: column;
+  }
+  
+  .tutorial-step {
+    flex-direction: column;
+  }
+  
+  .step-image {
+    width: 100%;
+  }
+  
+  .detail-favorite-button span {
+    display: none;
+  }
+}

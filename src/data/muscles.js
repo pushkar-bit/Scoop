@@ -1,0 +1,11 @@
+export const MUSCLES = {
+    neckandtraps: { label: "Neck & Traps" },
+    shoulders: { label: "Shoulders" },
+    biceps: { label: "Biceps" },
+    triceps: { label: "Triceps" },
+    forearms: { label: "Forearms" },
+    chest: { label: "Chest" },
+    core: { label: "Core" },
+    upperlegs: { label: "Upper Legs" },
+    lowerlegs: { label: "Lower Legs" },
+};

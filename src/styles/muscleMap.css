@@ -1,0 +1,230 @@
+/* src/styles/muscleMap.css */
+
+.muscle-map-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 6rem 1rem 2rem;
+    /* Increased top padding to 6rem */
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.hero-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.train-heading-premium {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    /* Even smaller heading */
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.train-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Fix 2: Large centered container using height as lead dimension */
+.body-scaling-container {
+    position: relative;
+    height: 60vh;
+    /* Reduced from 70vh to prevent scrolling */
+    /* Primary size control */
+    aspect-ratio: 3743 / 8021;
+    /* Matches source geometry exactly */
+    max-width: 95vw;
+    /* Safety for very narrow screens */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Feel premium */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.body-scaling-container:hover {
+    transform: scale(1.03);
+}
+
+/* Fix 3: Locked geometry for identical scaling */
+.body-image-base {
+    width: auto;
+    height: 100%;
+    /* Scale via height */
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    /* Optical only */
+    -webkit-user-drag: none;
+}
+
+.body-svg-overlay {
+    position: absolute;
+    inset: 0;
+    /* Align perfectly with container bounds */
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    /* Let clicks hit paths */
+}
+
+/* Interactive Hit Areas */
+.muscle-hit-area {
+    fill: transparent;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+
+.muscle-hit-area:hover {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+/* Specific Muscle Mappings */
+#neckandtraps:hover {
+    fill: rgba(255, 255, 255, 0.3);
+}
+
+/* white */
+#shoulders:hover {
+    fill: rgba(255, 165, 0, 0.3);
+}
+
+/* orange */
+#biceps:hover {
+    fill: rgba(255, 255, 0, 0.3);
+}
+
+/* yellow */
+#triceps:hover {
+    fill: rgba(0, 255, 0, 0.3);
+}
+
+/* green */
+#forearms:hover {
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+/* black */
+#chest:hover {
+    fill: rgba(255, 0, 0, 0.4);
+}
+
+/* red */
+#core:hover {
+    fill: rgba(0, 0, 139, 0.3);
+}
+
+/* dark blue */
+#upperlegs:hover {
+    fill: rgba(0, 0, 255, 0.3);
+}
+
+/* blue */
+#lowerlegs:hover {
+    fill: rgba(255, 192, 203, 0.3);
+}
+
+/* pink */
+
+/* Popover Styling */
+.muscle-popover-fixed {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 12px 16px;
+    min-width: 180px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    transform: translate(-50%, -100%);
+    /* Position above the anchor point */
+    margin-top: -20px;
+    cursor: pointer;
+    animation: popover-in 0.2s ease-out;
+}
+
+@keyframes popover-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -90%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -100%) scale(1);
+    }
+}
+
+.popover-arrow {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: rgba(10, 10, 10, 0.95);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.popover-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+}
+
+.popover-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+}
+
+/* Mobile Responsiveness */
+.bottom-invitation {
+    margin-top: 4rem;
+    text-align: center;
+    width: 100%;
+}
+
+.invitation-text {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+    .body-scaling-container {
+        height: auto;
+        width: 80vw;
+        aspect-ratio: 3743 / 8021;
+        margin-bottom: 3rem;
+    }
+}
