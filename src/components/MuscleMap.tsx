@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import MuscleTiltCard from "./MuscleTiltCard";
+import { HoverButton } from "./ui/HoverButton";
 import "../styles/muscleMap.css";
 
 /**
@@ -108,6 +109,22 @@ export default function MuscleMap() {
         >
           What would u want to train ?
         </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="next-button-container"
+          style={{ marginTop: '2rem' }}
+        >
+          <HoverButton
+            onClick={() => navigate('/home2')}
+            className="next-button"
+            glowColor="#67e8f9"
+          >
+            Next
+          </HoverButton>
+        </motion.div>
       </div>
 
       {/* Premium Tilt Card - Outside transformed container to fix positioning */}

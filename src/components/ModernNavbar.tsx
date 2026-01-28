@@ -17,6 +17,7 @@ export default function ModernNavbar({ user, onLogout }: ModernNavbarProps) {
 
   const navItems = [
     { id: 'home', label: 'HOME', path: '/' },
+    { id: 'home2', label: 'HOME 2', path: '/home2' },
     { id: 'workouts', label: 'WORKOUT GUIDES', path: '/workouts' },
     { id: 'history', label: 'HISTORY', path: '/history' },
   ];

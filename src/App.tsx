@@ -5,6 +5,7 @@ import MuscleMap from './components/MuscleMap';
 import Exercises from './pages/Exercises';
 import WorkoutGuidePage from './components/WorkoutGuidePage';
 import HistoryPage from './components/HistoryPage';
+import Home2 from './components/Home2';
 import LoginPage, { SignupPage } from './components/Login';
 import { EtherealShadow } from './components/ui/etheral-shadow';
 import './index.css';
@@ -36,6 +37,7 @@ function App() {
         <div className="relative z-10 pt-20">
           <Routes>
             <Route path="/" element={<MuscleMap />} />
+            <Route path="/home2" element={<Home2 />} />
             <Route path="/exercises/:muscle" element={<Exercises />} />
             <Route path="/workouts" element={<WorkoutGuidePage />} />
             <Route path="/history" element={<HistoryPage />} />
